@@ -3,9 +3,8 @@ const guideForm = document.getElementById("guide-form");
 const guideQuestion = document.getElementById("guide-question");
 const guideAnswer = document.getElementById("guide-answer");
 
-// For this local workshop demo, paste a Gemini API key between the quotes.
-// Remove the key before uploading the site anywhere public.
-const geminiApiKey = "PASTE_YOUR_KEY_HERE";
+// The key comes from config.js, which is kept out of git. See the README.
+const geminiApiKey = typeof GEMINI_API_KEY === "undefined" ? "" : GEMINI_API_KEY;
 
 const portfolioFacts = `
 Name: Alex Rivera
@@ -21,8 +20,8 @@ darkModeButton.addEventListener("click", function () {
 guideForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  if (geminiApiKey === "PASTE_YOUR_KEY_HERE") {
-    guideAnswer.textContent = "Paste your Gemini API key in script.js first.";
+  if (!geminiApiKey || geminiApiKey === "PASTE_YOUR_KEY_HERE") {
+    guideAnswer.textContent = "Add your Gemini API key to config.js first. See the README.";
     return;
   }
 
@@ -35,7 +34,10 @@ guideForm.addEventListener("submit", async function (event) {
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": geminiApiKey
+        },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }]
         })
