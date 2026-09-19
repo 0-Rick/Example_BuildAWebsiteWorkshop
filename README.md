@@ -7,7 +7,7 @@ Update `portfolioFacts` in `script.js` to describe the student's own work.
 ## Adding your Gemini API key
 
 1. Make a copy of `config.example.js` and name it `config.js` (same folder).
-2. Open `config.js` and replace `PASTE_YOUR_KEY_HERE` with your Gemini API key.
+2. Make a `config.js` file and write `const GEMINI_API_KEY = "PASTE_YOUR_KEY_HERE";` to the top of the file. Replace the string with your actual Gemini API key.
 3. Reload `index.html`.
 
 `config.js` is listed in `.gitignore`, so git will not commit it. Never upload `config.js` anywhere, including through the GitHub website's upload page.
