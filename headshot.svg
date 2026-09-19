@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">Profile placeholder</title>
+  <desc id="desc">A simple illustrated avatar on a blue background.</desc>
+  <rect width="200" height="200" fill="#d9efff"/>
+  <circle cx="100" cy="76" r="38" fill="#f0bd9c"/>
+  <path d="M57 70c2-38 84-42 87 2-19-14-63-19-87-2Z" fill="#28384d"/>
+  <path d="M36 200c5-49 32-75 64-75s59 26 64 75" fill="#496f9e"/>
+  <path d="M76 119c6 13 15 20 24 20s18-7 24-20v20c-7 10-17 15-24 15s-17-5-24-15Z" fill="#f0bd9c"/>
+</svg>
